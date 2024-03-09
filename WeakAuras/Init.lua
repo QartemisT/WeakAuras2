@@ -364,6 +364,7 @@ local flavorFromTocToNumber = {
   Vanilla = 1,
   TBC = 2,
   Wrath = 3,
+  Cata = 4,
   Mainline = 10
 }
 local flavor = flavorFromTocToNumber[flavorFromToc]
@@ -406,6 +407,10 @@ function WeakAuras.IsWrathClassic()
   return flavor == 3
 end
 
+function WeakAuras.IsCataClassic()
+  return flavor == 4
+end
+
 function WeakAuras.IsRetail()
   return flavor == 10
 end
@@ -414,8 +419,8 @@ function WeakAuras.IsClassicEraOrWrath()
   return WeakAuras.IsClassicEra() or WeakAuras.IsWrathClassic()
 end
 
-function WeakAuras.IsWrathOrRetail()
-  return WeakAuras.IsRetail() or WeakAuras.IsWrathClassic()
+function WeakAuras.IsWrathOrCataOrRetail()
+  return WeakAuras.IsRetail() or WeakAuras.IsWrathClassic() or WeakAuras.IsCataClassic()
 end
 
 WeakAuras.prettyPrint = function(...)
