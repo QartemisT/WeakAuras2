@@ -670,7 +670,7 @@ for classID = 1, 20 do -- GetNumClasses not supported by wow classic
   end
 end
 
-if WeakAuras.IsClassicEraOrWrath() then
+if WeakAuras.IsClassicEraOrWrathOrCata() then
   function WeakAuras.CheckTalentByIndex(index, extraOption)
     local tab = ceil(index / MAX_NUM_TALENTS)
     local num_talent = (index - 1) % MAX_NUM_TALENTS + 1
@@ -6138,7 +6138,7 @@ Private.event_prototypes = {
             ]]
           end
           for index, value in pairs(trigger.talent.multi) do
-            if WeakAuras.IsClassicEraOrWrath() then
+            if WeakAuras.IsClassicEraOrWrathOrCata() then
               local tier = index and ceil(index / MAX_NUM_TALENTS)
               local column = index and ((index - 1) % MAX_NUM_TALENTS + 1)
               local ret2 = [[
