@@ -2366,7 +2366,7 @@ do
     cdReadyFrame:RegisterEvent("SPELLS_CHANGED");
     cdReadyFrame:RegisterEvent("PLAYER_ENTERING_WORLD");
     cdReadyFrame:RegisterEvent("PLAYER_LEAVING_WORLD")
-    if WeakAuras.IsWrathClassic() then
+    if WeakAuras.IsWrathOrCata() then
       cdReadyFrame:RegisterEvent("RUNE_POWER_UPDATE");
       cdReadyFrame:RegisterEvent("RUNE_TYPE_UPDATE");
     end
@@ -4542,7 +4542,7 @@ end
 Private.ExecEnv.GetCurrencyInfo = function(id)
   if WeakAuras.IsRetail() then
     return C_CurrencyInfo.GetCurrencyInfo(id)
-  elseif WeakAuras.IsWrathClassic() then
+  elseif WeakAuras.IsWrathOrCata() then
     local name, currentAmount, texture, earnedThisWeek, weeklyMax, totalMax, isDiscovered, rarity = GetCurrencyInfo(id)
     local currencyInfo = {
       name = name,
