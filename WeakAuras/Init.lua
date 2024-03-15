@@ -427,6 +427,10 @@ function WeakAuras.IsWrathOrCata()
   return WeakAuras.IsWrathClassic() or WeakAuras.IsCataClassic()
 end
 
+function WeakAuras.IsCataOrRetail()
+  return WeakAuras.IsCataClassic() or WeakAuras.IsRetail()
+end
+
 function WeakAuras.IsClassicEraOrWrathOrCata()
   return WeakAuras.IsClassicEra() or WeakAuras.IsWrathClassic() or WeakAuras.IsCataClassic()
 end
